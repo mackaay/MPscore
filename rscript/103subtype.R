@@ -1,1 +1,0 @@
-#M=log2(Beta/(1-Beta))
