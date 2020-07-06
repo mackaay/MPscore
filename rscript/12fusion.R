@@ -2,7 +2,7 @@ rm(list = ls())
 options(stringsasfactors = F)
 
 ###GSE85133
-dir <- "/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE85133_RNAseq_raw/alignment_fusion/"
+dir <- "./GSE85133_RNAseq_raw/alignment_fusion/"
 fusion.files <- list.files(path = dir,pattern = '*predictions.tsv$', recursive = T)
 
 
@@ -30,7 +30,7 @@ table(c(fusion$LeftGene, fusion$RightGene))
 
 
 ###GSE136661
-dir <- "/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE136661_RNAseq_raw/alignment_fusion/"
+dir <- "./GSE136661_RNAseq_raw/alignment_fusion/"
 fusion.files <- list.files(path = dir,pattern = '*predictions.tsv$', recursive = T)
 
 fusion2 <- read.table(paste(dir, fusion.files[1], sep = ""), 
