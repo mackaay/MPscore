@@ -13,14 +13,14 @@ sampleinfo$title
 sampleinfo
 
 
-dir <- '/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE85133_RNAseq/'
+dir <- './GSE85133_RNAseq/'
 
-FPKM <- read.table("/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE85133_RNAseq/GSM2258207_MN-1037_TUMOR_genes.fpkm_tracking.txt.gz", 
+FPKM <- read.table("./GSE85133_RNAseq/GSM2258207_MN-1037_TUMOR_genes.fpkm_tracking.txt.gz", 
                    sep = '\t', header = T)
 gene_id <-  FPKM$gene_id
 
 FPKM <- as.data.frame(FPKM$FPKM)
-colnames(FPKM) <-  str_sub(basename("/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE85133_RNAseq/GSM2258207_MN-1037_TUMOR_genes.fpkm_tracking.txt.gz")
+colnames(FPKM) <-  str_sub(basename(".AnaM/GSE85133_RNAseq/GSM2258207_MN-1037_TUMOR_genes.fpkm_tracking.txt.gz")
                            , start = 1L, end = 10L)
 FPKM$gene_id <- gene_id
 
@@ -51,15 +51,15 @@ colnames(sampleinfo)[3:8] <- c("age", "cohort", "gender", "pathology",
                                "tissue", "wes")
 
 
-dir <- '/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE136661_RNAseq/'
+dir <- './GSE136661_RNAseq/'
 
-counts <- read.table("/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE136661_RNAseq/GSM4054837_12-25748.20R_htseq.counts.txt.gz", 
+counts <- read.table("./GSE136661_RNAseq/GSM4054837_12-25748.20R_htseq.counts.txt.gz", 
                    sep = '\t', header = F)
 
 ensembl <-  counts$V1
 
 counts <- as.data.frame(counts$V2)
-colnames(counts) <-  str_sub(basename("/datasets/work/hb-diab-cfdna/work/scratch/chenkai/AnaM/GSE136661_RNAseq/GSM4054837_12-25748.20R_htseq.counts.txt.gz"), 
+colnames(counts) <-  str_sub(basename("./GSE136661_RNAseq/GSM4054837_12-25748.20R_htseq.counts.txt.gz"), 
                            start = 1L, end = 10L)
 rownames(counts) <- ensembl
 head(counts)
